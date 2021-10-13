@@ -120,7 +120,7 @@ h1 {
 
 /*purchase*/
 .purchase-list {
-  display: none;
+  display: block;
 }
 
 .back {

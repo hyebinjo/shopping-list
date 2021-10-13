@@ -3,6 +3,8 @@
 const addBtn = document.querySelector('.addBtn');
 const items = document.querySelector('.items');
 const input = document.querySelector('.input');
+const purchaseBtn = document.querySelector('.purchaseBtn');
+const purchases = document.querySelector('.purchases');
 
 function onadd() {
     const text = input.value;
@@ -48,6 +50,34 @@ function cart(id) {
     }
 }
 
+function purchase() {
+    const Selected = document.querySelectorAll('.selected');
+    Selected.forEach(item => {
+        const id = item.dataset.id;
+        const ItemsToBuy = document.querySelector(`.item-row[data-id="${id}"]`);
+        const purchaseText = ItemsToBuy.querySelector('.item-name');
+        const text = purchaseText.textContent;
+        const purchaseRow = creatPurchaseItem(id,text);
+        purchases.appendChild(purchaseRow);
+        ItemsToBuy.remove();
+    });
+}
+
+function creatPurchaseItem(id,text) {
+    const item = document.createElement('li');
+    item.setAttribute('class', 'purchase-row');
+    item.setAttribute('data-id', id);
+    item.innerHTML= `
+    <div class="purchase">
+        <button class="undo" data-id=${id}><i class="fas fa-undo" data-id=${id}></i></button>
+        <span class="purchase-name">${text}</span>
+        <button class="delete" data-id=${id}><i class="fas fa-minus-circle" data-id=${id}></i></button>
+    </div>
+    <div class="item-divider"></div>
+    `
+    return item;
+}
+
 addBtn.addEventListener('click', () => {
     onadd();
 });
@@ -67,4 +97,8 @@ items.addEventListener('click', (e) => {
     } else if(e.target.className === "delete" || e.target.className ==="fas fa-minus-circle") {
         removeitem(id);
     }
+})
+
+purchaseBtn.addEventListener('click', () => {
+    purchase();
 })
