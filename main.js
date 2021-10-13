@@ -5,16 +5,11 @@ const items = document.querySelector('.items');
 const input = document.querySelector('.input');
 
 function onadd() {
-    // 인풋 텍스트 받아옴
     const text = input.value;
-    // 아이템 id 생성. <li>생성
     const itemRow = creatItem(text);
-    // 아이템리스트에 추가
     items.appendChild(itemRow);
-    // 인풋 초기화
     input.value = '';
     input.focus();
-
 }
 
 let id=0;
@@ -24,13 +19,19 @@ function creatItem(text) {
     item.setAttribute('data-id', id);
     item.innerHTML= `
     <div class="item">
-        <button class="cart" data-id=${id}><i class="fas fa-shopping-cart"></i></button>
+        <button class="cart" data-id=${id}><i class="fas fa-shopping-cart" data-id=${id}></i></button>
         <span class="item-name">${text}</span>
-        <button class="delete" data-id=${id}><i class="fas fa-minus-circle"></i></button>
+        <button class="delete" data-id=${id}><i class="fas fa-minus-circle" data-id=${id}></i></button>
     </div>
     <div class="item-divider"></div>
     `
+    id++;
     return item;
+}
+
+function removeitem(id) {
+    const ToBeDeleted = document.querySelector(`.item-row[data-id="${id}"]`);
+    ToBeDeleted.remove();
 }
 
 addBtn.addEventListener('click', () => {
@@ -40,5 +41,16 @@ addBtn.addEventListener('click', () => {
 input.addEventListener('keydown', (e) => {
     if(e.key === 'Enter') {
         onadd();
+    }
+})
+
+items.addEventListener('click', (e) => {
+    const id = e.target.dataset.id;
+    if(!id) {
+        return;
+    } else if(e.target.className === "cart" || e.target.className ==="fas fa-shopping-cart") {
+        console.log('cart');
+    } else if(e.target.className === "delete" || e.target.className ==="fas fa-minus-circle") {
+        removeitem(id);
     }
 })
