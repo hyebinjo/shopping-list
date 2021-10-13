@@ -12,6 +12,8 @@ section {
   width: 400px;
   margin: auto;
   border-radius: 20px;
+  -webkit-box-shadow: 5px 5px 9px 5px #5f5f5f;
+  box-shadow: 5px 5px 9px 5px #5f5f5f;
 }
 
 ul {
@@ -40,6 +42,10 @@ h1 {
   border-radius: 20px 20px 0 0;
   padding: 10px;
   position: relative;
+}
+
+.shopping-list {
+  display: block;
 }
 
 .items {
@@ -119,8 +125,9 @@ h1 {
 }
 
 /*purchase*/
+
 .purchase-list {
-  display: block;
+  display: none;
 }
 
 .back {
@@ -134,4 +141,6 @@ h1 {
 .purchases {
   background-color: rgb(253, 241, 226);
   margin: 0;
+  height: 580px;
+  border-radius: 0 0 20px 20px;
 }

@@ -1,10 +1,14 @@
 'use strict';
 
+const ShoppingList = document.querySelector('.shopping-list');
+const PurchaseList = document.querySelector('.purchase-list');
 const addBtn = document.querySelector('.addBtn');
 const items = document.querySelector('.items');
 const input = document.querySelector('.input');
 const purchaseBtn = document.querySelector('.purchaseBtn');
 const purchases = document.querySelector('.purchases');
+const GoToPurchasesList = document.querySelector('.purchased-items');
+const GoToShoppingList = document.querySelector('.back');
 
 function onadd() {
     const text = input.value;
@@ -121,4 +125,14 @@ purchases.addEventListener('click', (e) => {
     } else if(e.target.className === "delete" || e.target.className ==="fas fa-minus-circle") {
         removeitem(id);
     }
+})
+
+GoToPurchasesList.addEventListener('click', () => {
+    ShoppingList.style.display = 'none';
+    PurchaseList.style.display = 'block';
+})
+
+GoToShoppingList.addEventListener('click', () => {
+    PurchaseList.style.display = 'none';
+    ShoppingList.style.display = 'block';
 })
