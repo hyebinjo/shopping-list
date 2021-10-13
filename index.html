@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/116c7c8757.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>Shopping list</title>
+</head>
+<body>
+    <section class="shopping-list">
+        <h1 class="shopping-list__title">Shopping list</h1>
+        <ul class="items">
+            <li class="item-row">
+                <div class="item">
+                    <button class="cart selected"><i class="fas fa-shopping-cart"></i></button>
+                    <span class="item-name">소고기</span>
+                    <button class="delete"><i class="fas fa-minus-circle"></i></button>
+                </div>
+                <div class="item-divider"></div>
+            </li>
+            <li class="item-row">
+                <div class="item">
+                    <button class="cart selected"><i class="fas fa-shopping-cart"></i></button>
+                    <span class="item-name">소고기</span>
+                    <button class="delete"><i class="fas fa-minus-circle"></i></button>
+                </div>
+                <div class="item-divider"></div>
+            </li>
+            <li class="item-row">
+                <div class="item">
+                    <button class="cart"><i class="fas fa-shopping-cart"></i></button>
+                    <span class="item-name">소고기</span>
+                    <button class="delete"><i class="fas fa-minus-circle"></i></button>
+                </div>
+                <div class="item-divider"></div>
+            </li>
+            <li class="item-row">
+                <div class="item">
+                    <button class="cart"><i class="fas fa-shopping-cart"></i></button>
+                    <span class="item-name">소고기</span>
+                    <button class="delete"><i class="fas fa-minus-circle"></i></button>
+                </div>
+                <div class="item-divider"></div>
+            </li>
+        </ul>
+        <footer>
+            <input type="text" class="input">
+            <div class="buttons">
+                <button class="purchaseBtn"><i class="far fa-credit-card"></i></button>
+                <button class="inputBtn"><i class="fas fa-plus"></i></button>
+                <button class="purchased-items"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+        </footer>
+    </section>
+
+    <section class="purchase-list">
+        <h1 class="purchase-list__title">
+            <button class="back"><i class="fas fa-chevron-left"></i></button>
+            Purchase list
+        </h1>
+        <ul class="purchases">
+            <li class="purchase-row">
+                <div class="purchase">
+                    <button class="undo"><i class="fas fa-undo"></i></button>
+                    <span class="purchase-name">소고기</span>
+                    <button class="delete"><i class="fas fa-minus-circle"></i></button>
+                </div>
+                <div class="item-divider"></div>
+            </li>
+            <li class="purchase"></li>
+            <li class="purchase"></li>
+        </ul>
+        <button class="delete-all"></button>
+    </section>
+</body>
+</html>

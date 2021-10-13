@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #ced3df;
+  text-align: center;
+}
+
+section {
+  width: 400px;
+  margin: auto;
+  border-radius: 20px;
+}
+
+ul {
+  list-style: none;
+  height: 500px;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 150ms ease-in;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+h1 {
+  margin: 0;
+  background: linear-gradient(160deg, #9fdcff 0%, #e593c9 100%);
+  color: white;
+  border-radius: 20px 20px 0 0;
+  padding: 10px;
+  position: relative;
+}
+
+.items {
+  background-color: #f1f0f7;
+  margin: 0;
+}
+
+.item,
+.purchase {
+  margin-bottom: 2px;
+}
+
+.cart,
+.delete,
+.undo {
+  color: rgb(190, 190, 190);
+  font-size: 16px;
+}
+
+.cart.selected {
+  color: blue;
+}
+
+.delete:hover {
+  color: red;
+}
+
+.undo:hover {
+  color: dimgrey;
+}
+
+.item-name,
+.purchase-name {
+  display: inline-block;
+  text-align: left;
+  padding-left: 10px;
+  width: 300px;
+}
+
+.item-divider {
+  width: 100%;
+  height: 1px;
+  background-color: lightslategrey;
+  margin-bottom: 8px;
+}
+
+.input {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 32px;
+  font-size: 20px;
+  padding: 0 16px;
+}
+
+.buttons {
+  height: 48px;
+  background: linear-gradient(160deg, #9fdcff 0%, #e593c9 100%);
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.inputBtn {
+  color: white;
+  font-size: 30px;
+  background-color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.purchaseBtn,
+.purchased-items {
+  font-size: 20px;
+}
+
+/*purchase*/
+.back {
+  position: absolute;
+  left: 20px;
+  color: white;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+}
+.purchases {
+  background-color: rgb(253, 241, 226);
+  margin: 0;
+}
