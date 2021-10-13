@@ -119,6 +119,10 @@ h1 {
 }
 
 /*purchase*/
+.purchase-list {
+  display: none;
+}
+
 .back {
   position: absolute;
   left: 20px;

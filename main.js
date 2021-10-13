@@ -34,6 +34,16 @@ function removeitem(id) {
     ToBeDeleted.remove();
 }
 
+function cart(id) {
+    const putItem = document.querySelector(`.item-row[data-id="${id}"]`);
+    const cartIcon = putItem.querySelector('.cart');
+    if(cartIcon.className === "cart") {
+        cartIcon.classList.add('selected');
+    } else {
+        cartIcon.classList.remove('selected')
+    }
+}
+
 addBtn.addEventListener('click', () => {
     onadd();
 });
@@ -49,7 +59,7 @@ items.addEventListener('click', (e) => {
     if(!id) {
         return;
     } else if(e.target.className === "cart" || e.target.className ==="fas fa-shopping-cart") {
-        console.log('cart');
+        cart(id);
     } else if(e.target.className === "delete" || e.target.className ==="fas fa-minus-circle") {
         removeitem(id);
     }
