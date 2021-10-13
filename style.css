@@ -101,6 +101,10 @@ h1 {
   padding: 0 16px;
 }
 
+.input:focus::placeholder {
+  color: transparent;
+}
+
 .buttons {
   height: 48px;
   background: linear-gradient(160deg, #9fdcff 0%, #e593c9 100%);
