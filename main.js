@@ -6,6 +6,10 @@ const input = document.querySelector('.input');
 
 function onadd() {
     const text = input.value;
+    if(text=="") {
+        input.focus();
+        return;
+    }
     const itemRow = creatItem(text);
     items.appendChild(itemRow);
     input.value = '';
