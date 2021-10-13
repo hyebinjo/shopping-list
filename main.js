@@ -65,17 +65,26 @@ function purchase() {
 
 function creatPurchaseItem(id,text) {
     const item = document.createElement('li');
-    item.setAttribute('class', 'purchase-row');
+    item.setAttribute('class', 'item-row');
     item.setAttribute('data-id', id);
     item.innerHTML= `
     <div class="purchase">
         <button class="undo" data-id=${id}><i class="fas fa-undo" data-id=${id}></i></button>
-        <span class="purchase-name">${text}</span>
+        <span class="item-name">${text}</span>
         <button class="delete" data-id=${id}><i class="fas fa-minus-circle" data-id=${id}></i></button>
     </div>
     <div class="item-divider"></div>
     `
     return item;
+}
+
+function readdAndRemove(id) {
+    const ItemToReadd = document.querySelector(`.item-row[data-id="${id}"]`);
+    const ReaddItemText = ItemToReadd.querySelector('.item-name');
+    const text = ReaddItemText.textContent;
+    const itemRow = creatItem(text);
+    items.appendChild(itemRow);
+    ItemToReadd.remove();
 }
 
 addBtn.addEventListener('click', () => {
@@ -101,4 +110,15 @@ items.addEventListener('click', (e) => {
 
 purchaseBtn.addEventListener('click', () => {
     purchase();
+})
+
+purchases.addEventListener('click', (e) => {
+    const id = e.target.dataset.id;
+    if(!id) {
+        return;
+    } else if(e.target.className === "undo" || e.target.className ==="fas fa-undo") {
+        readdAndRemove(id);
+    } else if(e.target.className === "delete" || e.target.className ==="fas fa-minus-circle") {
+        removeitem(id);
+    }
 })
